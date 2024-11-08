@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Book Details</h1>
+
+    <div th:object = "${book}">
+        <div>
+            <strong>id: </strong> <span th:text = "*{id}"></span>
+        </div>
+
+        <div>
+            <strong>title: </strong> <span th:text = "*{title}"></span>
+        </div>
+
+        <div>
+            <strong>decription: </strong> <span th:text = "*{description}"></span>
+        </div>
+
+        <div>
+            <strong>release: </strong> <span th:text = "*{#temporals.format(release, 'dd-MM-yyyy')}"></span>
+        </div>
+
+        <div>
+            <strong>price: </strong> <span th:text = "*{price}"></span>
+        </div>
+
+        <div>
+            <strong>Bestseller:</strong> <span th:text="${book.bestseller ? 'Yes' : 'No'}"></span>
+        </div>
+
+        <div>
+            <a th:href = "@{/index}">powrót</a>
+        </div>
+    </div>
+</body>
+</html>

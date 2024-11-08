@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>edytuj</title>
+</head>
+<body>
+  <form th:method="POST" th:object="${book}" th:action="@{/bookForm}">
+    <div>Tytuł: <label><input type="text" th:field="*{title}"/></label></div>
+    <div>Autor: <label><input type="text" th:field="*{author}"/></label></div>
+    <div>Opis: <label><input type="text" th:field="*{description}"/></label></div>
+    <div>data wydania: <label><input type="date" th:field="*{release}"/></label></div>
+    <div>cena: <label><input type="text" th:field="*{price}"/></label></div>
+    <div>Bestseller: <label><input type="radio" th:field="*{bestseller}" value="1"></label>Tak
+      <label><input type="radio" th:field="*{bestseller}" value="0">Nie</label></div>
+
+    <div><label><input type="submit" value="send form"></label></div>
+  </form>
+</body>
+</html>
