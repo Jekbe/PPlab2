@@ -14,7 +14,7 @@ public class MyController {
 
     @GetMapping("/newBook")
     public String newBook(Model model){
-        Book book = new Book(1L, "autor", "tytuł", LocalDate.now(), "opis", 30, false, new Rozmiar(10, 15, 100));
+        Book book = new Book(1L, "autor", "tytuł", LocalDate.now(), "opis", 30, false/*, new Rozmiar(10, 15, 100)*/);
 
         model.addAttribute("book", book);
 
@@ -25,9 +25,9 @@ public class MyController {
     public String list(Model model){
         ArrayList<Book> books = new ArrayList<>();
 
-        books.add(new Book(1L, "autor1","tytuł1", LocalDate.now(), "opis1", 30, false, new Rozmiar(10, 15, 100)));
-        books.add(new Book(2L, "autor2","tytuł2", LocalDate.now(), "opis2", 50, true, new Rozmiar(10, 15, 100)));
-        books.add(new Book(3L, "autor3", "tytuł3", LocalDate.now(), "opis3", 20, false, new Rozmiar(10, 15, 100)));
+        books.add(new Book(1L, "autor1","tytuł1", LocalDate.now(), "opis1", 30, false/*, new Rozmiar(10, 15, 100)*/));
+        books.add(new Book(2L, "autor2","tytuł2", LocalDate.now(), "opis2", 50, true/*, new Rozmiar(10, 15, 100)*/));
+        books.add(new Book(3L, "autor3", "tytuł3", LocalDate.now(), "opis3", 20, false/*, new Rozmiar(10, 15, 100)*/));
 
         model.addAttribute("books", books);
 

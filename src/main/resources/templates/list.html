@@ -20,6 +20,7 @@
                     <th>Description</th>
                     <th>Price</th>
                     <th>Bestseller</th>
+                    <!--<th>Rozmiar</th>-->
                     <th>Szczegóły</th>
                     <th>Usuń</th>
                     <th>Edytuj</th>
@@ -33,6 +34,7 @@
                     <td th:text="${book.description}"></td>
                     <td th:text="${book.price}"></td>
                     <td th:text="${book.bestseller ? 'Yes' : 'No'}"></td>
+                    <!--<td th:text="${book.rozmiar.toString()}"></td>-->
                     <td><a th:href="@{/info(Id=${book.id})}">szczegóły</a></td>
                     <td><a th:href="@{/usun(Id=${book.id})}">usuń</a></td>
                     <td><a th:href="@{/edytuj(Id=${book.id})}">edytuj</a></td>

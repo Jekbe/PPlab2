@@ -21,8 +21,8 @@ public class BookValidator implements Validator {
             errors.rejectValue("author","fieldsMismach.book.author", "Pole tytuł i autor nie może być takie same");
         }
 
-        if (book.getRozmiar() != null && !book.getRozmiar().toString().matches(ROZMIAR_PATTERN)) {
-            errors.rejectValue("rozmiar", "formatMismatch.book.rozmiar", "Nieprawidłowy format rozmiaru");
-        }
+//        if (book.getRozmiar() != null && !book.getRozmiar().toString().matches(ROZMIAR_PATTERN)) {
+//            errors.rejectValue("rozmiar", "formatMismatch.book.rozmiar", "Nieprawidłowy format rozmiaru");
+//        }
     }
 }
