@@ -1,21 +1,33 @@
 package edu.uph.ii.pplab2.domain;
 
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Positive;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Book implements Serializable {
+    @NotNull
     private Long id;
+    @NotBlank
     private String author, title, description;
+    @Past
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate release;
+    @Positive
+    @NumberFormat(pattern = "#.00")
     private float price;
     private boolean bestseler;
+    private Rozmiar rozmiar;
 
     public Book() {
     }
 
-    public Book(Long id, String author, String title, LocalDate release, String description, float price, boolean bestseller) {
+    public Book(Long id, String author, String title, LocalDate release, String description, float price, boolean bestseller, Rozmiar rozmiar) {
         this.id = id;
         this.author = author;
         this.title = title;
@@ -23,6 +35,7 @@ public class Book implements Serializable {
         this.description = description;
         this.price = price;
         this.bestseler = bestseller;
+        this.rozmiar = rozmiar;
     }
 
     public Long getId() {
@@ -79,5 +92,13 @@ public class Book implements Serializable {
 
     public void setBestseller(boolean bestseler) {
         this.bestseler = bestseler;
+    }
+
+    public Rozmiar getRozmiar() {
+        return rozmiar;
+    }
+
+    public void setRozmiar(Rozmiar rozmiar) {
+        this.rozmiar = rozmiar;
     }
 }

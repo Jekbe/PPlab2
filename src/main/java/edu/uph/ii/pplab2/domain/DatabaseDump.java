@@ -17,11 +17,11 @@ public class DatabaseDump {
     static {
         bookList = new ArrayList<>();
         long id = 0;
-        var book = new Book(id++, "Henryk Sienkiewicz","W pustyni i puszczy", LocalDate.of(2000,1,23), "0-596-52068-9", 56.99f, true);
+        var book = new Book(id++, "Henryk Sienkiewicz","W pustyni i puszczy", LocalDate.of(2000,1,23), "0-596-52068-9", 56.99f, true, new Rozmiar(10, 15, 100));
         bookList.add(book);
-        book = new Book(id++, "Henryk Sienkiewicz","Krzyżacy", LocalDate.of(2006,11,13), "0 512 52068 9", 106.59f, true);
+        book = new Book(id++, "Henryk Sienkiewicz","Krzyżacy", LocalDate.of(2006,11,13), "0 512 52068 9", 106.59f, true, new Rozmiar(10, 15, 100));
         bookList.add(book);
-        book = new Book(id++, "Adam Mickiewicz","Pan Tadeusz", LocalDate.of(1996,9,16), "ISBN-10 0-596-52068-9", 100.10f, false);
+        book = new Book(id, "Adam Mickiewicz","Pan Tadeusz", LocalDate.of(1996,9,16), "ISBN-10 0-596-52068-9", 100.10f, false, new Rozmiar(10, 15, 100));
         bookList.add(book);
     }
 
