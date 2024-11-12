@@ -1,5 +1,9 @@
 package edu.uph.ii.pplab2.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
@@ -7,7 +11,10 @@ import org.springframework.format.annotation.NumberFormat;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "books")
 public class Book implements Serializable {
+    @Id
     @NotNull
     private Long id;
     @NotBlank
@@ -19,6 +26,8 @@ public class Book implements Serializable {
     @NumberFormat(pattern = "#.00")
     private float price;
     private boolean bestseler;
+    @ManyToOne
+    private CoverType coverType;
     //private Rozmiar rozmiar;
 
     public Book() {
@@ -91,7 +100,15 @@ public class Book implements Serializable {
         this.bestseler = bestseler;
     }
 
-//    public Rozmiar getRozmiar() {
+    public CoverType getCoverType() {
+        return coverType;
+    }
+
+    public void setCoverType(CoverType coverType) {
+        this.coverType = coverType;
+    }
+
+    //    public Rozmiar getRozmiar() {
 //        return rozmiar;
 //    }
 //

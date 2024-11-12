@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 @Controller
 public class ControllerLab3 {
+
     @GetMapping("/list3")
     public String list(Model model){
         ArrayList<Book> books = (ArrayList<Book>) DatabaseDump.getAllBooks();
