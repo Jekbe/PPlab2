@@ -2,11 +2,21 @@ package edu.uph.ii.pplab2.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 @Entity
+@Table(name = "Covers")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CoverType implements Serializable {
     @Id
     private Long id;
@@ -14,37 +24,4 @@ public class CoverType implements Serializable {
     private String nazwa;
     @NotBlank
     private String material;
-
-    public CoverType() {
-    }
-
-    public CoverType(Long id, String nazwa, String material) {
-        this.id = id;
-        this.nazwa = nazwa;
-        this.material = material;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public @NotBlank String getNazwa() {
-        return nazwa;
-    }
-
-    public void setNazwa(@NotBlank String nazwa) {
-        this.nazwa = nazwa;
-    }
-
-    public @NotBlank String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(@NotBlank String material) {
-        this.material = material;
-    }
 }
